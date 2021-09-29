@@ -1,4 +1,4 @@
-{{ kafka_log_files }} {
+{{ kafka_log_files }}/*.log* {
 	daily
 	size 60M
 	rotate 14
@@ -6,6 +6,6 @@
 	delaycompress
 	missingok
 	copytruncate
-	create 644 kafka kafka
+	create 644 {{ kafka_user }} {{ kafka_group }}
 	su kafka kafka
 }

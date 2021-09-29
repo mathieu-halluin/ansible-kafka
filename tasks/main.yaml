@@ -238,11 +238,3 @@
     src: kafka_logrotate.j2
     dest: /etc/logrotate.d/kafka
     mode: 0640
-
-- name: logrotate | Create cron task for faster rotation checks
-  cron:
-    name: Rotate kafka logs
-    minute: "{{ kafka_logrotate_cron_schedule.minute }}"
-    hour: "{{ kafka_logrotate_cron_schedule.hour }}"
-    job: /usr/sbin/logrotate -v /etc/logrotate.d/kafka
-  when: kafka_logrotate_cron_enabled
