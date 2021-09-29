@@ -11,6 +11,7 @@ kafka_group: kafka
 
 kafka_root_dir: /opt
 kafka_dir: "{{ kafka_root_dir }}/kafka"
+kafka_log_files: " {{ kafka_dir}}/logs"
 
 # Start kafka after installation
 kafka_start: yes
@@ -140,3 +141,9 @@ kafka_producer_compression_type: none
 
 kafka_consumer_group_id: kafka-consumer-group
 kafka_consumer_bootstrap_servers: "localhost:9092"
+
+# logrotate
+kafka_logrotate_cron_enabled: yes
+kafka_logrotate_cron_schedule:
+  minute: '*'
+  hour: '6'

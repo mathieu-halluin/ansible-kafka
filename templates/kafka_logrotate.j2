@@ -1,0 +1,11 @@
+{{ kafka_log_files }} {
+	daily
+	size 60M
+	rotate 14
+	compress
+	delaycompress
+	missingok
+	copytruncate
+	create 644 kafka kafka
+	su kafka kafka
+}
