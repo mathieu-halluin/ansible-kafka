@@ -147,4 +147,3 @@ kafka_logrotate_cron_enabled: yes
 kafka_logrotate_cron_schedule:
   minute: '*'
   hour: '6'
-  
