@@ -246,3 +246,4 @@
     hour: "{{ kafka_logrotate_cron_schedule.hour }}"
     job: /usr/sbin/logrotate -v /etc/logrotate.d/kafka
   when: kafka_logrotate_cron_enabled
+  
